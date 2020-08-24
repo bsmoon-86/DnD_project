@@ -5,6 +5,13 @@ var server = http.createServer(app);
 var port = 3333;
 var path = require("path");
 // var session = require("express-session");
+var connection = mysql.createConnection({
+  host: "192.168.0.12",
+  port: 3306, // db 포트
+  user: "block", // user 이름
+  password: "block1234!@", // 비밀번호
+  database: "DND", // database 이름
+});
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
