@@ -28,7 +28,7 @@
         <div class="page-header">
     	    <h1>회원가입 <small>Register</small></h1>
         </div>
-        <form class="form-horizontal" method="post" action="/action1">
+        <form class="form-horizontal">
         <div class="form-group">
           <label class="col-sm-3 control-label" for="inputEmail">이메일</label>
         <div class="col-sm-6">
@@ -91,8 +91,8 @@
           </div>
         <div class="form-group">
           <div class="col-sm-12 text-center">
-            <button class="btn btn-primary" type="submit">회원가입<i class="fa fa-check spaceLeft"></i></button>
-            <button class="btn btn-danger" type="submit">가입취소<i class="fa fa-times spaceLeft"></i></button>
+            <button class="btn btn-primary" name = "signup">회원가입</button>
+            <button class="btn btn-danger" name = "cancel">가입취소</button>
           </div>
         </div>
         </form>
@@ -104,6 +104,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+
+
+    <script>
+      $("button[name=signup]").click(function(){
+        alert(input[name=id]);
+      })
+    </script>
+
   </body>
 </html>
 
