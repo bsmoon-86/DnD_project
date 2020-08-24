@@ -13,9 +13,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
 var indexRouter = require("./routes/index");
+var signinRouter = require("./routes/signin");
 app.use("/", indexRouter);
 
-app.use("/signin", indexRouter);
+app.use("/signin", signinRouter);
 
 app.post("/action1", function (req, res) {
   const id = req.body.id;
