@@ -22,16 +22,11 @@ app.use(express.static(path.join(__dirname, "public")));
 var indexRouter = require("./routes/index");
 app.use("/", indexRouter);
 
-var indexRouter = require("./routes/index");
-app.use("/sign_up", indexRouter);
-
-var indexRouter = require("./routes/index");
-app.use("/sign_up2", indexRouter);
+app.use("/signin", indexRouter);
 
 app.post("/action1", function (req, res) {
   const id = req.body.id;
   const pass = req.body.pass;
-  const c_pass = req.body.c_pass;
   const w_name = req.body.w_name;
   const w_birth = req.body.w_birth;
   const w_addr = req.body.w_addr;
@@ -39,7 +34,6 @@ app.post("/action1", function (req, res) {
 
   console.log(id);
   console.log(pass);
-  console.log(c_pass);
   console.log(w_name);
   console.log(w_birth);
   console.log(w_addr);
