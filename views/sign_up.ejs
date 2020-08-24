@@ -81,6 +81,7 @@
           maxlength="11"
         />
       </div>
+    </form>
             <div class="col-sm-6" data-toggle="buttons">
               <label class="btn btn-warning active">
                 <input id="agree" type="checkbox" autocomplete="off" chacked>
@@ -95,7 +96,6 @@
             <button class="btn btn-danger" name = "cancel">Cancel sign up</button>
           </div>
         </div>
-        </form>
           <hr>
         </div>
       </article>
@@ -108,7 +108,15 @@
 
     <script>
       $("button[name=signup]").click(function(){
-        alert(input[name=id]);
+        $.post("/action1", {
+          id: $("input[name=id]").val(),
+          pass: $("input[name=pass]").val(),
+          w_name : $("input[name=w_name]").val(),
+          w_birth: $("input[name=w_birth]").val(),
+          w_addr: $("input[name=w_addr]").val(),
+          w_phone: $("input[name=w_phone]").val()
+
+        })
       })
     </script>
 
