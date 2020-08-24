@@ -26,50 +26,50 @@
 
         <div class="col-md-12">
         <div class="page-header">
-    	    <h1>회원가입 <small>Register</small></h1>
+    	    <h1>sign <small>sign up</small></h1>
         </div>
         <form class="form-horizontal" method="post" action="/action1">
         <div class="form-group">
-          <label class="col-sm-3 control-label" for="inputEmail">이메일</label>
+          <label class="col-sm-3 control-label" for="inputEmail">Email</label>
         <div class="col-sm-6">
-          <input class="form-control" id="inputEmail" name="id" type="email" placeholder="이메일">
+          <input class="form-control" id="inputEmail" name="id" type="email" placeholder="Email">
         </div>
         </div>
         <div class="form-group">
-          <label class="col-sm-3 control-label" for="inputPassword">비밀번호</label>
+          <label class="col-sm-3 control-label" for="inputPassword">Password</label>
         <div class="col-sm-6">
-          <input class="form-control" id="inputPassword" name="pass" type="password" placeholder="비밀번호">
-        <p class="help-block">숫자, 특수문자 포함 8자 이상</p>
+          <input class="form-control" id="inputPassword" name="pass" type="password" placeholder="Password">
+        <p class="help-block">number, 8 or more characters including special characters</p>
         </div>
         </div>
           <div class="form-group">
-              <label class="col-sm-3 control-label" for="inputPasswordCheck">비밀번호 확인</label>
+              <label class="col-sm-3 control-label" for="inputPasswordCheck">Confirm Password</label>
              <div class="col-sm-6">
-              <input class="form-control" id="inputPasswordCheck" name="c_pass" type="password" placeholder="비밀번호 확인">
-                <p class="help-block">비밀번호를 한번 더 입력해주세요.</p>
+              <input class="form-control" id="inputPasswordCheck" name="c_pass" type="password" placeholder="Confirm Password">
+                <p class="help-block">Please check your password once more</p>
              </div>
           </div>
 
         <div class="form-group">
-            <label class="col-sm-3 control-label" for="inputName">이름</label>
+            <label class="col-sm-3 control-label" for="inputName">Name</label>
           <div class="col-sm-6">
-            <input class="form-control" id="inputName" name="w_name" type="text" placeholder="이름">
+            <input class="form-control" id="inputName" name="w_name" type="text" placeholder="name">
           </div>
         </div>
         <div class="form-group">
-          <label class="col-sm-3 control-label" for="inputName">생년월일</label>
+          <label class="col-sm-3 control-label" for="inputName">Date of birth</label>
         <div class="col-sm-6">
-          <input class="form-control" id="inputName" name="w_birth" type="text" placeholder="생년월일">
+          <input class="form-control" id="inputName" name="w_birth" type="text" placeholder="Date of birth">
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-3 control-label" for="inputName">주소</label>
+        <label class="col-sm-3 control-label" for="inputName">Address</label>
       <div class="col-sm-6">
-        <input class="form-control" id="inputName" name="w_addr" type="text" placeholder="주소">
+        <input class="form-control" id="inputName" name="w_addr" type="text" placeholder="Address">
       </div>
     </div>
     <div class="form-group" id="divAccountNumber">
-      <label class="col-sm-3 control-label" for="inputNumber">핸드폰 번호</label>
+      <label class="col-sm-3 control-label" for="inputNumber">Phone number</label>
       <div class="col-sm-6">
         <input
           type="tel"
@@ -77,7 +77,7 @@
           id="AccountNumber"
           name="w_phone"
           data-rule-required="true"
-          placeholder="핸드폰 번호"
+          placeholder="Phone number"
           maxlength="11"
         />
       </div>
@@ -86,13 +86,13 @@
                 <input id="agree" type="checkbox" autocomplete="off" chacked>
                   <span class="fa fa-check"></span>
               </label>
-              <a href="#">이용약관</a> 에 동의 합니다.
+              <a href="#">Terms of Use</a> agree
             </div>
           </div>
         <div class="form-group">
           <div class="col-sm-12 text-center">
-            <button class="btn btn-primary" type="submit">회원가입<i class="fa fa-check spaceLeft"></i></button>
-            <button class="btn btn-danger" type="submit">가입취소<i class="fa fa-times spaceLeft"></i></button>
+            <button class="btn btn-primary" name = "signup">sign up</button>
+            <button class="btn btn-danger" name = "cancel">Cancel sign up</button>
           </div>
         </div>
         </form>
@@ -104,14 +104,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+
+
+    <script>
+      $("button[name=signup]").click(function(){
+        alert(input[name=id]);
+      })
+    </script>
+
   </body>
 </html>
 
 <div>
   <p class="text-center">
-      <small><strong>D&D</strong></small><br>
-      <small>대표 : 문병선 ㆍ 주소 :  서울시 마포구 공덕동 ㆍ 사업자등록번호:123-12-12345 ㆍ 전화 : 02-123-1234</small><br>
-      <small>Copyrightⓒ test.com All rights reserved.</small>
+    <small><strong>D&D</strong></small><br>
+    <small>CEO : 문병선 ㆍ address :  서울시 마포구 공덕동 ㆍ Company Registration Number : 123-12-12345 ㆍ company number : 02-123-1234</small><br>
   </p>
 </div>
 <!--// 푸터 들어가는 부분 -->
