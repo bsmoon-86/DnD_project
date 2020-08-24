@@ -11,6 +11,7 @@ var connection = mysql.createConnection({
   user: "block", // user 이름
   password: "block1234!@", // 비밀번호
   database: "DND", // database 이름
+  //table명 소문자 jhj
 });
 
 app.set("views", path.join(__dirname, "views"));
