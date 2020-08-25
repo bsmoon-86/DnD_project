@@ -6,53 +6,55 @@
     <title>contract view(master)</title>
   </head>
   <body>
-    <table border="1px" style="text-align: center;" solid>
-      <thead>
-        <tr>
-          <td>no.</td>
-          <td>contract</td>
-          <td>contractor</td>
-          <td>Progress</td>
-          <td>request modify</td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td><a href="view_contract">Labor contract</a></td>
-          <td>Moon</td>
-          <td>complete</td>
-          <td>null</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td><a href="view_contract">Labor contract</a></td>
-          <td>Lee</td>
-          <td>complete</td>
-          <td>null</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td><a href="view_contract">Labor contract</a></td>
-          <td>Choi</td>
-          <td>complete</td>
-          <td>null</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td><a href="view_contract">Labor contract</a></td>
-          <td>Kim</td>
-          <td>complete</td>
-          <td>null</td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td><a href="view_contract">Labor contract</a></td>
-          <td>Jung</td>
-          <td>request modify</td>
-          <td>request</td>
-        </tr>
-      </tbody>
-    </table>
+    <h1>CONTRACT</h1>
+    <textarea rows="30px" cols="100px" style="resize: none;" readonly>
+      안녕하세요. 이 것은 근로 계약서 입니다.
+      회사 대표 : 문병선
+      근로자 : 김승빈
+      나이 : 19
+      월급 : 1억
+      근무 일자 : 2020.08.24 ~ 2020.09.24
+      비고 : 화이팅
+    </textarea>
+    <br />
+    <!--linkcode == 1 은 관리자 용-->
+    <% var linkcode = 1; if(linkcode == 1) { %>
+    <textarea rows="10px" cols="50px" style="resize: none;" readonly></textarea>
+    <% } else { %>
+    <textarea
+      rows="10px"
+      cols="50px"
+      placeholder="요청할 수정 내역을 작성해주세요."
+      style="resize: none;"
+    ></textarea>
+    <% } %>
+    <br />
+    <input placeholder="company" />
+    <input
+      type="button"
+      id="button"
+      value="please sign!"
+      style="background-color: red;"
+      onclick="setColor('button', 'yellow')"
+      ;
+    />
+
+    <input placeholder="contractor" />
+    <input
+      type="button"
+      id="sign"
+      value="please sign!"
+      style="background-color: red;"
+      onclick="setColor('sign', '#101010')"
+    />
+    <br /><br />
+    <!--linkcode == 1 은 관리자 용-->
+    <% if(linkcode == 1) { %>
+    <input type="button" value="modify" />
+    <input type="button" value="confirm" onclick="func_confirm()" />
+    <% } else { %>
+    <a href="modify.html"><input type="button" value="modify" /></a>
+    <input type="button" value="confirm" />
+    <% } %>
   </body>
 </html>
