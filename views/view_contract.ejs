@@ -35,17 +35,17 @@
   <body>
     <h1>CONTRACT</h1>
     <textarea rows="30px" cols="100px" style="resize: none;" readonly>
-안녕하세요. 이 것은 근로 계약서 입니다.
-회사 대표 : 문병선
-근로자 : 김승빈
-나이 : 19
-월급 : 1억
-근무 일자 : 2020.08.24 ~ 2020.09.24
-비고 : 화이팅
+      안녕하세요. 이 것은 근로 계약서 입니다.
+      회사 대표 : 문병선
+      근로자 : 김승빈
+      나이 : 19
+      월급 : 1억
+      근무 일자 : 2020.08.24 ~ 2020.09.24
+      비고 : 화이팅
     </textarea>
     <br />
     <!--linkcode == 1 은 관리자 용-->
-    <% if(linkcode == 1) { %>
+    <% var linkcode = 1; if(linkcode == 1) { %>
     <textarea rows="10px" cols="50px" style="resize: none;" readonly></textarea>
     <% } else { %>
     <textarea
