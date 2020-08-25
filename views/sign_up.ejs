@@ -53,19 +53,19 @@
         <div class="form-group">
             <label class="col-sm-3 control-label" for="inputName">Name</label>
           <div class="col-sm-6">
-            <input class="form-control" id="inputName" name="w_name" type="text" placeholder="name">
+            <input class="form-control" id="inputName" name="name" type="text" placeholder="name">
           </div>
         </div>
         <div class="form-group">
           <label class="col-sm-3 control-label" for="inputName">Date of birth</label>
         <div class="col-sm-6">
-          <input class="form-control" id="inputName" name="w_birth" type="text" placeholder="Date of birth">
+          <input class="form-control" id="inputName" name="birth" type="text" placeholder="Date of birth">
         </div>
       </div>
       <div class="form-group">
         <label class="col-sm-3 control-label" for="inputName">Address</label>
       <div class="col-sm-6">
-        <input class="form-control" id="inputName" name="w_addr" type="text" placeholder="Address">
+        <input class="form-control" id="inputName" name="addr" type="text" placeholder="Address">
       </div>
     </div>
     <div class="form-group" id="divAccountNumber">
@@ -75,13 +75,12 @@
           type="tel"
           class="form-control onlyNumber"
           id="AccountNumber"
-          name="w_phone"
+          name="phone"
           data-rule-required="true"
           placeholder="Phone number"
           maxlength="11"
         />
       </div>
-    </form>
             <div class="col-sm-6" data-toggle="buttons">
               <label class="btn btn-warning active">
                 <input id="agree" type="checkbox" autocomplete="off" chacked>
@@ -92,11 +91,12 @@
           </div>
         <div class="form-group">
           <div class="col-sm-12 text-center">
-            <button class="btn btn-primary" name = "signup">sign up</button>
+            <button type="submit" class="btn btn-primary" name = "signup">sign up</button>
             <button class="btn btn-danger" name = "cancel">Cancel sign up</button>
           </div>
         </div>
           <hr>
+        </form>
         </div>
       </article>
 

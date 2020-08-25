@@ -5,14 +5,15 @@ var server = http.createServer(app);
 var port = 3333;
 var path = require("path");
 // var session = require("express-session");
-// var connection = mysql.createConnection({
-//   host: "192.168.0.12",
-//   port: 3306, // db 포트
-//   user: "block", // user 이름
-//   password: "block1234!@", // 비밀번호
-//   database: "DND", // database 이름
-//   //table명 소문자 jhj
-// });
+var mysql = require("mysql2");
+var connection = mysql.createConnection({
+  host: "192.168.0.5",
+  port: 3306, // db 포트
+  user: "block", // user 이름
+  password: "block1234!@", // 비밀번호
+  database: "DND", // database 이름
+  //table명 소문자 jhj
+});
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -29,21 +30,73 @@ app.use("/signin", signinRouter);
 
 app.use("/company", companyRouter);
 
-app.post("/action1", function (req, res) {
+app.post("/action1", function (req, res, next) {
   const id = req.body.id;
   const pass = req.body.pass;
-  const w_name = req.body.w_name;
-  const w_birth = req.body.w_birth;
-  const w_addr = req.body.w_addr;
-  const w_phone = req.body.w_phone;
+  const name = req.body.name;
+  const phone = req.body.phone;
+  const addr = req.body.addr;
+  const linkcode = 2;
+  const birth = req.body.birth;
 
-  console.log(id);
-  console.log(pass);
-  console.log(w_name);
-  console.log(w_birth);
-  console.log(w_addr);
-  console.log(w_phone);
+  connection.query(`select id from jhj where id=?`, [id], function (
+    err,
+    users
+  ) {
+    if (err) {
+      res.render("sign_up", {
+        errormessage: "오류 발생",
+        // user: req.session.loggedIn,
+      });
+    } else if (users.length > 0) {
+      res.render("sign_up", {
+        errormessage: "이미 존재하는 이메일",
+        // user: req.session.loggedIn,
+      });
+    } else {
+      console.log(id);
+      console.log(pass);
+      console.log(name);
+      console.log(phone);
+      console.log(addr);
+      console.log(linkcode);
+      console.log(birth);
+
+      connection.query(
+        `insert into jhj (id, pass, name, phone, addr, linkcode, birth)
+                    values (?, ?, ?, ?, ?, 2, ?)`,
+        [id, pass, name, phone, addr, linkcode, birth],
+        function (err2, result) {
+          if (err2) {
+            res.render("sign_up", {
+              errormessage: "생성 오류",
+              // user: req.session.loggedIn,
+            });
+          } else {
+            console.log("생성완료");
+            res.redirect("/");
+          }
+        }
+      );
+    }
+  });
 });
+
+// app.post("/action1", function (req, res) {
+//   const id = req.body.id;
+//   const pass = req.body.pass;
+//   const w_name = req.body.w_name;
+//   const w_birth = req.body.w_birth;
+//   const w_addr = req.body.w_addr;
+//   const w_phone = req.body.w_phone;
+
+//   console.log(id);
+//   console.log(pass);
+//   console.log(w_name);
+//   console.log(w_birth);
+//   console.log(w_addr);
+//   console.log(w_phone);
+// });
 
 app.post("/action2", function (req, res) {
   const p_num = req.body.p_num;
