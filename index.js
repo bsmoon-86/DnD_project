@@ -5,6 +5,14 @@ var server = http.createServer(app);
 var port = 3333;
 var path = require("path");
 // var session = require("express-session");
+// var connection = mysql.createConnection({
+//   host: "192.168.0.12",
+//   port: 3306, // db 포트
+//   user: "block", // user 이름
+//   password: "block1234!@", // 비밀번호
+//   database: "DND", // database 이름
+//   //table명 소문자 jhj
+// });
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -13,18 +21,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
 var indexRouter = require("./routes/index");
+var signinRouter = require("./routes/signin");
+var companyRouter = require("./routes/company");
 app.use("/", indexRouter);
 
-var indexRouter = require("./routes/index");
-app.use("/sign_up", indexRouter);
+app.use("/signin", signinRouter);
 
-var indexRouter = require("./routes/index");
-app.use("/sign_up2", indexRouter);
+app.use("/company", companyRouter);
 
 app.post("/action1", function (req, res) {
   const id = req.body.id;
   const pass = req.body.pass;
-  const c_pass = req.body.c_pass;
   const w_name = req.body.w_name;
   const w_birth = req.body.w_birth;
   const w_addr = req.body.w_addr;
@@ -32,7 +39,6 @@ app.post("/action1", function (req, res) {
 
   console.log(id);
   console.log(pass);
-  console.log(c_pass);
   console.log(w_name);
   console.log(w_birth);
   console.log(w_addr);
