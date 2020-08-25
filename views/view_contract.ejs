@@ -3,34 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>contract_page (master)</title>
-    <script>
-      var count = 1;
-      function setColor(btn, color) {
-        var property = document.getElementById(btn);
-        var c_change = document.getElementById(btn);
-        if (count == 0) {
-          property.style.backgroundColor = "yellow";
-          count = 1;
-          property.value = "signed";
-        } else {
-          property.style.backgroundColor = "red";
-          count = 0;
-          property.value = "please sign!";
-        }
-      }
-      function func_confirm() {
-        if (
-          confirm(
-            "Please check it again. If you put it in a block, it cannot be modified."
-          )
-        ) {
-          alert("Has been saved.");
-        } else {
-          alert("NO");
-        }
-      }
-    </script>
+    <title>contract view(master)</title>
   </head>
   <body>
     <h1>CONTRACT</h1>
