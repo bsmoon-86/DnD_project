@@ -28,7 +28,7 @@
         <div class="page-header">
     	    <h1>sign <small>sign up</small></h1>
         </div>
-        <form class="form-horizontal">
+        <form class="form-horizontal" method="post" action="/action2">
         <div class="form-group">
         <label class="col-sm-3 control-label" for="p_num">Business Number</label>
             <div class="col-sm-6">
@@ -38,7 +38,7 @@
         <div class="form-group">
           <label class="col-sm-3 control-label" for="inputEmail">Email</label>
         <div class="col-sm-6">
-          <input class="form-control" name="ID" id="inputEmail" type="email" placeholder="Email">
+          <input class="form-control" name="id" id="inputEmail" type="email" placeholder="Email">
         </div>
         </div>
         <div class="form-group">
@@ -68,7 +68,7 @@
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-3 control-label" for="p_name">CEO name</label>
+        <label class="col-sm-3 control-label" for="name">CEO name</label>
       <div class="col-sm-6">
         <input class="form-control" name="ceo" id="inputName" type="text" placeholder="name">
       </div>
@@ -83,7 +83,7 @@
       <label class="col-sm-3 control-label" for="inputNumber">CEO phone number</label>
         <div class="col-sm-6">
           <div class="input-group">
-            <input type="tel" class="form-control" id="inputNumber" placeholder="- Please enter without" />
+            <input type="tel" class="form-control" name="ceo_phone" id="inputNumber" placeholder="- Please enter without" />
             <div class="col-sm-6" data-toggle="buttons">
               <label class="btn btn-warning active">
                 <input id="agree" type="checkbox" autocomplete="off" chacked>
@@ -94,6 +94,7 @@
           </div>
         <div class="form-group">
           <div class="col-sm-12 text-center">
+          
             <button class="btn btn-primary" type="submit">sign up<i class="fa fa-check spaceLeft"></i></button>
             <button class="btn btn-danger" type="submit">Cancel sign up<i class="fa fa-times spaceLeft"></i></button>
           </div>
@@ -110,12 +111,3 @@
   </body>
 </html>
 
-<div>
-  <p class="text-center">
-      <small><strong>D&D</strong></small><br>
-      <small>CEO : 문병선 ㆍ address :  서울시 마포구 공덕동 ㆍ Company Registration Number : 123-12-12345 ㆍ company number : 02-123-1234</small><br>
-      <small>Copyrightⓒ test.com All rights reserved.</small>
-  </p>
-</div>
-<!--// 푸터 들어가는 부분 -->
-</div>
