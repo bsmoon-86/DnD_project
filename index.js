@@ -63,8 +63,8 @@ app.post("/action1", function (req, res, next) {
       console.log(birth);
 
       connection.query(
-        `insert into jhj (id, pass, name, phone, addr, linkcode, birth)
-                    values (?, ?, ?, ?, ?, 2, ?)`,
+        `insert into jhj (id, pass, name, phone, addr, linkcode, birth)  
+                    values (?, ?, ?, ?, ?, ?, ?)`,
         [id, pass, name, phone, addr, linkcode, birth],
         function (err2, result) {
           if (err2) {
@@ -82,40 +82,61 @@ app.post("/action1", function (req, res, next) {
   });
 });
 
-// app.post("/action1", function (req, res) {
-//   const id = req.body.id;
-//   const pass = req.body.pass;
-//   const w_name = req.body.w_name;
-//   const w_birth = req.body.w_birth;
-//   const w_addr = req.body.w_addr;
-//   const w_phone = req.body.w_phone;
-
-//   console.log(id);
-//   console.log(pass);
-//   console.log(w_name);
-//   console.log(w_birth);
-//   console.log(w_addr);
-//   console.log(w_phone);
-// });
-
-app.post("/action2", function (req, res) {
+app.post("/action2", function (req, res, next) {
   const p_num = req.body.p_num;
   const id = req.body.id;
   const pass = req.body.pass;
-  const p_name = req.body.p_name;
-  const p_phone = req.body.p_phone;
+  const name = req.body.name;
+  const phone = req.body.phone;
+  const linkcode = 0;
   const ceo = req.body.ceo;
-  const p_addr = req.body.p_addr;
+  const addr = req.body.addr;
   const ceo_phone = req.body.ceo_phone;
 
-  console.log(p_num);
-  console.log(id);
-  console.log(pass);
-  console.log(p_name);
-  console.log(p_phone);
-  console.log(ceo);
-  console.log(p_addr);
-  console.log(ceo_phone);
+  connection.query(`select id from jhj where id=?`, [id], function (
+    err,
+    users
+  ) {
+    if (err) {
+      res.render("sign_up2", {
+        errormessage: "오류 발생",
+        // user: req.session.loggedIn,
+      });
+    } else if (users.length > 0) {
+      res.render("sign_up2", {
+        errormessage: "이미 존재하는 이메일",
+        // user: req.session.loggedIn,
+      });
+    } else {
+      console.log(p_num);
+      console.log(id);
+      console.log(pass);
+      console.log(name);
+      console.log(phone);
+      console.log(linkcode);
+      console.log(ceo);
+      console.log(addr);
+      console.log(ceo_phone);
+
+      connection.query(
+        `insert into jhj (p_num, id, pass, name, linkcode, phone, ceo, addr, ceo_phone)  
+                    values (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        [p_num, id, pass, name, linkcode, phone, ceo, addr, ceo_phone],
+        function (err2, result) {
+          if (err2) {
+            console.log(err2);
+            res.render("sign_up2", {
+              errormessage: "생성 오류",
+              // user: req.session.loggedIn,
+            });
+          } else {
+            console.log("생성완료");
+            res.redirect("/");
+          }
+        }
+      );
+    }
+  });
 });
 
 server.listen(port, function () {
