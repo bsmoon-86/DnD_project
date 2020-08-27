@@ -1,167 +1,108 @@
 <!DOCTYPE html>
-<html lang="ko">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
   <head>
-    <title>Login V10</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
-    <!--===============================================================================================-->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="vendor/bootstrap/css/bootstrap.min.css"
-    />
-    <!--===============================================================================================-->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"
-    />
-    <!--===============================================================================================-->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css"
-    />
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css" />
-    <!--===============================================================================================-->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="vendor/css-hamburgers/hamburgers.min.css"
-    />
-    <!--===============================================================================================-->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="vendor/animsition/css/animsition.min.css"
-    />
-    <!--===============================================================================================-->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="vendor/select2/select2.min.css"
-    />
-    <!--===============================================================================================-->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="vendor/daterangepicker/daterangepicker.css"
-    />
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="css/util.css" />
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <!--===============================================================================================-->
+  <title>D&D Project Log in</title>
+  <%- include ("./head.ejs") %>
   </head>
   <body>
-    <div class="limiter">
-      <div class="container-login100">
-        <div class="wrap-login100 p-t-50 p-b-90">
-          <form class="login100-form validate-form flex-sb flex-w" method="POST" action="/signin">
-            <span class="login100-form-title p-b-51">
-              Login
-            </span>
-
-            <div
-              class="wrap-input100 validate-input m-b-16"
-              data-validate="Username is required"
-            >
-              <input
-                class="input100"
-                type="text"
-                name="id"
-                placeholder="Email"
-              />
-              <span class="focus-input100"></span>
-            </div>
-
-            <div
-              class="wrap-input100 validate-input m-b-16"
-              data-validate="Password is required"
-            >
-              <input
-                class="input100"
-                type="password"
-                name="pass"
-                placeholder="Password"
-              />
-              <span class="focus-input100"></span>
-            </div>
-
-            <div class="flex-sb-m w-full p-t-3 p-b-24">
-              <div class="contact100-form-checkbox">
-                <input
-                  class="input-checkbox100"
-                  id="ckb1"
-                  type="checkbox"
-                  name="remember-me"
-                />
-                <label class="label-checkbox100" for="ckb1">
-                  Remember me
-                </label>
-              </div>
-
-              <div>
-                <a href="./sign_up" class="txt1">
-                Sign_up(walker)
-                </a>
-              </div>
-              <a href="./sign_up2" class="txt1">
-                Sign_up(company)
+    <div id="fh5co-wrapper">
+        <div class="fh5co-section">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 fh5co-news">
+				<div class="limiter">
+					<div
+            class="container-login100" >
+            <span class="login_font">D&D PROJECT</span>
+					  <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+						<form class="login100-form validate-form" method="POST" action="">
+						  <div
+							class="wrap-input100 validate-input m-b-23"
+							data-validate="ID is reauired">
+							<span class="label-input100">ID</span>
+							<input
+							  class="input100"
+							  type="text"
+							  name="id"
+							  placeholder="Type your ID"
+							/>
+							<span class="focus-input100" data-symbol="&#xf206;"></span>
+						  </div>
+			  
+						  <div
+							class="wrap-input100 validate-input"
+							data-validate="Password is required"
+						  >
+							<span class="label-input100">Password</span>
+							<input
+							  class="input100"
+							  type="password"
+							  name="pass"
+							  placeholder="Type your password"
+							/>
+							<span class="focus-input100" data-symbol="&#xf190;"></span>
+						  </div>
+			  
+						  <div class="text-right p-t-8 p-b-31">
+							<a href="#">
+							  Forgot password?
+							</a>
+							<a href="c_email.html" class="txt2">
+							  Sign Up (for companies)
               </a>
-            </div>
+              <a href="email.html" class="txt2">
+							  Sign Up (for workers)
+							</a>
+						  </div>
+						  <div class="container-login100-form-btn">
+							<div class="wrap-login100-form-btn">
+							  <div class="login100-form-bgbtn"></div>
+							  <button class="login100-form-btn">
+								Login
+							  </button>
+							</div>
+						   </div>
+						  </div>
+						</form>
+					  </div>
+					</div>
+				  </div>
 
-            <div class="container-login100-form-btn m-t-17">
-              <button class="login100-form-btn" name = "login" type="submit">
-                Login
-              </button>
+              </div>
             </div>
+          </div>
         </div>
+		<footer>
+			<div id="footer">
+			  <div class="container">
+				<div class="row">
+				  <div class="col-md-6 col-md-offset-3 text-center">
+					<p class="fh5co-social-icons">
+					  <i class="icon-twitter2"></i>
+					  <i class="icon-facebook2"></i>
+					  <i class="icon-instagram"></i>
+					  <i class="icon-dribbble2"></i>
+					  <i class="icon-youtube"></i>
+					</p>
+					<p>
+					  2020 D&D Project.<br />
+					  198 West 21th Street, Suite 721 New York NY 10016
+					  <br />+ (82) 1234 5678 <br />contract@gmail.com
+					</p>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </footer>
       </div>
+      <!-- END fh5co-page -->
     </div>
-  </form>
+    <!-- END fh5co-wrapper -->
 
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    
-<!-- 
-    <script>
-      $("button[name=login]").click(function(){
-        $.post('/signin', {
-          id : $("input[name=id]").val(),
-          pass : $("input[name=pass]").val()
-        })
-      })
-    </script> -->
-
-    <div id="dropDownSelect1"></div>
-
-    <!--===============================================================================================-->
-    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="vendor/animsition/js/animsition.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="vendor/bootstrap/js/popper.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="vendor/select2/select2.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="vendor/daterangepicker/moment.min.js"></script>
-    <script src="vendor/daterangepicker/daterangepicker.js"></script>
-    <!--===============================================================================================-->
-    <script src="vendor/countdowntime/countdowntime.js"></script>
-    <!--===============================================================================================-->
-    <script src="js/main.js"></script>
-    <div>
-      <p class="text-center">
-          <small><strong>dndproject</strong></small><br>
-          <small>대표 : 문병선 ㆍ 주소 :  서울시 서초구 ㆍ 사업자등록번호:123-12-12345 ㆍ 전화 : 02-123-1234</small><br>
-          <small>Copyrightⓒ test.com All rights reserved.</small>
-      </p>
-  </div>
-  <!--// 푸터 들어가는 부분 -->
-</div>
+    <%- include ("./script.ejs") %>
   </body>
 </html>

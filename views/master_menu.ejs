@@ -1,21 +1,188 @@
 <!DOCTYPE html>
-<html lang="ko">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Master_menu</title>
+    <%- include ("./head.ejs") %>
+    <title>D&D Project home</title>
   </head>
   <body>
-    <h1>Master Page</h1>
-    <ul>
-      within the Contract
-      <li><a href="/company/w_contract_view">View contract</a></li>
-      <li><a href="/company/w_contract_write">Write contract</a></li>
-    </ul>
-    <ul>
-      B2B Contract
-      <li><a href="">View contract</a></li>
-      <li><a href="">Write contract</a></li>
-    </ul>
+    <div id="fh5co-wrapper">
+      <div id="fh5co-page">
+        <div id="fh5co-header">
+          <!--include header-->
+          <header id="fh5co-header-section">
+            <div class="container">
+              <div class="nav-header">
+                <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"
+                  ><i></i
+                ></a>
+                <!--로그인 값에 따라 회사 로고 이름 들어가게!-->
+                <h1 id="fh5co-logo"><a href="home">D&D Project</a></h1>
+                <!-- START #fh5co-menu-wrap -->
+                <nav id="fh5co-menu-wrap" role="navigation">
+                  <ul class="sf-menu" id="fh5co-primary-menu">
+                    <li>
+                      <a href="#">Home</a>
+                    </li>
+                    <li>
+                      <a href="w_view_contract" class="fh5co-sub-ddown"
+                        >In company contract</a
+                      >
+                      <ul class="fh5co-sub-menu">
+                        <!--로그인이 안되었으면 눌렀을 때 로그인 창으로 가야됨.-->
+                        <li>
+                          <a href="w_view_contract">View contract</a>
+                        </li>
+                        <li>
+                          <a href="">Write contract</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="w_solo_view" class="fh5co-sub-ddown"
+                        >B2B contract</a
+                      >
+                      <ul class="fh5co-sub-menu">
+                        <li>
+                          <a href="w_solo_view">View contract</a>
+                        </li>
+                        <li>
+                          <a href="">Write contract</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <!--마이 페이지도 로그인 되면 떠야됨.-->
+                      <a href="">My page</a>
+                    </li>
+                    <!--로그인 됐으면 class active가 home으로 그리고 sign up이 log out으로 변해야 됨.-->
+                    <li class="active"><a href="login">Sign up</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </header>
+          <!--include header end-->
+        </div>
+
+        <div class="fh5co-hero">
+          <div class="fh5co-overlay"></div>
+          <div
+            class="fh5co-cover text-center"
+            data-stellar-background-ratio="0.5"
+            style="background-image: url(images/contract.jpg)"
+          >
+            <div class="desc animate-box">
+              <h2>contract without papers.</h2>
+              <span
+                ><a class="btn btn-primary btn-lg" href="login">log in</a></span
+              >
+            </div>
+          </div>
+        </div>
+        <div id="fh5co-contact" class="fh5co-section animate-box">
+          <div class="container">
+            <form action="#">
+              <div class="row">
+                <div class="col-md-6">
+                  <h3 class="section-title">Contract without papers</h3>
+                  <p>
+                    전자화된 계약서와 회사 문서를 Private Blockchain에
+                    저장합니다. 블록체인의 특성상 자료의 위, 변조를 방지할 수
+                    있으며 해킹의 위협에서 벗어날 수 있습니다.
+                  </p>
+                  <ul class="contact-info">
+                    <li>
+                      <i class="icon-location-pin"></i>198 West 21th Street,
+                      Suite 721 New York NY 10016
+                    </li>
+                    <li><i class="icon-phone2"></i>+ 1235 2355 98</li>
+                    <li>
+                      <i class="icon-mail"></i><a href="#">info@yoursite.com</a>
+                    </li>
+                    <li>
+                      <i class="icon-globe2"></i
+                      ><a href="#">www.yoursite.com</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Name"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Email"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <textarea
+                          name=""
+                          class="form-control"
+                          id=""
+                          cols="30"
+                          rows="7"
+                          placeholder="Message"
+                        ></textarea>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <input
+                          type="submit"
+                          value="Send Message"
+                          class="btn btn-primary btn-lg"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <footer>
+          <div id="footer">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center">
+                  <p class="fh5co-social-icons">
+                    <i class="icon-twitter2"></i>
+                    <i class="icon-facebook2"></i>
+                    <i class="icon-instagram"></i>
+                    <i class="icon-dribbble2"></i>
+                    <i class="icon-youtube"></i>
+                  </p>
+                  <p>
+                    2020 D&D Project.<br />
+                    198 West 21th Street, Suite 721 New York NY 10016
+                    <br />+ (82) 1234 5678 <br />contract@gmail.com
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <!-- END fh5co-page -->
+    </div>
+    <!-- END fh5co-wrapper -->
+    <%- include ("./script.ejs") %>
   </body>
 </html>
