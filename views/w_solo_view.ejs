@@ -1,117 +1,209 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>contract view(master)</title>
-
-    <script>
-      function view_contract() {
-        //location.href("/company/view_contract");
-        window.open("/company/view_contract", "_self");
-        //alert("test");
-      }
-    </script>
+    <title>D&D Project home</title>
+    <%- include ("./head.ejs") %>
   </head>
   <body>
-    <% if(linkcode == 1) { %>
-    <table style="text-align: center;" border="1px" solid>
-      <thead>
-        <tr>
-          <td>no.</td>
-          <td>contract</td>
-          <td>contractor</td>
-          <td>Progress</td>
-          <td>request modify</td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr onclick="view_contract()">
-          <td>1</td>
-          <td>Labor contract</td>
-          <td>samsung</td>
-          <td>complete</td>
-          <td>null</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Labor contract</td>
-          <td>apple</td>
-          <td>complete</td>
-          <td>null</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Labor contract</td>
-          <td>airbnb</td>
-          <td>complete</td>
-          <td>null</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>Labor contract</td>
-          <td>MS</td>
-          <td>complete</td>
-          <td>null</td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td>Labor contract</td>
-          <td>sktellcom</td>
-          <td>request modify</td>
-          <td>request</td>
-        </tr>
-      </tbody>
-    </table>
-    <% } else { %>
-    <table border="1px" style="text-align: center;" solid>
-      <thead>
-        <tr>
-          <td>no.</td>
-          <td>contract</td>
-          <td>contractor</td>
-          <td>Progress</td>
-          <td>request modify</td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td><a href="view_contract">Labor contract</a></td>
-          <td>Moon</td>
-          <td>complete</td>
-          <td>null</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td><a href="view_contract">Labor contract</a></td>
-          <td>Lee</td>
-          <td>complete</td>
-          <td>null</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td><a href="view_contract">Labor contract</a></td>
-          <td>Choi</td>
-          <td>complete</td>
-          <td>null</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td><a href="view_contract">Labor contract</a></td>
-          <td>Kim</td>
-          <td>complete</td>
-          <td>null</td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td><a href="view_contract">Labor contract</a></td>
-          <td>Jung</td>
-          <td>request modify</td>
-          <td>request</td>
-        </tr>
-      </tbody>
-    </table>
-    <% } %>
+    <div id="fh5co-wrapper">
+      <div id="fh5co-page">
+        <div id="fh5co-header">
+          <!--include header-->
+          <header
+            id="fh5co-header-section"
+            style="background-image: url(images/contract.jpg)"
+          >
+            <div class="container">
+              <div class="nav-header">
+                <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"
+                  ><i></i
+                ></a>
+                <!--로그인 값에 따라 회사 로고 이름 들어가게!-->
+                <h1 id="fh5co-logo"><a href="home">D&D Project</a></h1>
+                <!-- START #fh5co-menu-wrap -->
+                <nav id="fh5co-menu-wrap" role="navigation">
+                  <ul class="sf-menu" id="fh5co-primary-menu">
+                    <li>
+                      <a href="#">Home</a>
+                    </li>
+                    <li>
+                      <a href="w_solo_view" class="fh5co-sub-ddown">B2C contract</a>
+                      <ul class="fh5co-sub-menu">
+                        <li>
+                          <a href="w_solo_view">View contract</a>
+                        </li>
+                        <li>
+                          <a href="">Write contract</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="w_view_contract" class="fh5co-sub-ddown">B2B contract</a>
+                      <ul class="fh5co-sub-menu">
+                        <li>
+                          <a href="w_view_contract">View contract</a>
+                        </li>
+                        <li>
+                          <a href="">Write contract</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="active"><a href="login">Sign up</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </header>
+          <!--include header end-->
+        </div>
+        <div class="fh5co-hero">
+          <div
+            id="view_contract_bg"
+            class="fh5co-cover text-center"
+            data-stellar-background-ratio="0.5"
+          >
+            <div class="desc animate-box">
+              <div class="main_view">
+                <h1 class="table_head">View B2C contract</h1>
+                <input id="tab1" type="radio" name="tabs" class="cc" checked />
+                <!--디폴트 메뉴-->
+                <label for="tab1" class="bb">Total contract</label>
+
+                <input id="tab2" type="radio" name="tabs" class="cc" />
+                <label for="tab2" class="bb">Signed contract</label>
+
+                <input id="tab3" type="radio" name="tabs" class="cc" />
+                <label for="tab3" class="bb">Unsigned contract</label>
+
+                <section id="content1" class="aa">
+                  <p class="ww">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <td>No.</td>
+                          <td>Contarct</td>
+                          <td>Company</td>
+                          <td>Process</td>
+                          <td>Request modify</td>
+                        </tr>
+                      </thead>
+                      <tbody class="tbody">
+                          <tr>
+                            <td>1</td>
+                            <td>Labor contract</td>
+                            <td>samsung</td>
+                            <td>signed</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Labor contract</td>
+                            <td>samsung</td>
+                            <td>unsigned</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td>Labor contract</td>
+                            <td>samsung</td>
+                            <td>unsigned</td>
+                            <td>y</td>
+                          </tr>
+                      </tbody>
+                    </table>
+                  </p>
+                </section>
+
+                <section id="content2" class="aa">
+                  <p class="ww"> <table class="table table-hover">
+                    <thead>
+                        <tr>
+                          <td>no.</td>
+                          <td>contarct</td>
+                          <td>company</td>
+                          <td>process</td>
+                          <td>modify</td>
+                        </tr>
+                    </thead>
+                    <tbody class="tbody">
+                        <tr>
+                          <td>1</td>
+                          <td>Labor contract</td>
+                          <td>samsung</td>
+                          <td>signed</td>
+                          <td></td>
+                        </tr>
+                    </tbody>
+                  </table>
+                </p></p>
+                </section>
+
+                <section id="content3" class="aa">
+                  <p class="ww"> <table class="table table-hover">
+                    <thead>
+                        <tr>
+                          <td>no.</td>
+                          <td>contarct</td>
+                          <td>company</td>
+                          <td>process</td>
+                          <td>modify</td>
+                        </tr>
+                    </thead>
+                    <tbody class="tbody">
+                        <tr>
+                          <td>1</td>
+                          <td>Labor contract</td>
+                          <td>samsung</td>
+                          <td>unsigned</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>Labor contract</td>
+                          <td>samsung</td>
+                          <td>unsigned</td>
+                          <td>y</td>
+                        </tr>
+                    </tbody>
+                  </table>
+                </p></p>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer>
+          <div id="footer">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center">
+                  <p class="fh5co-social-icons">
+                    <i class="icon-twitter2"></i>
+                    <i class="icon-facebook2"></i>
+                    <i class="icon-instagram"></i>
+                    <i class="icon-dribbble2"></i>
+                    <i class="icon-youtube"></i>
+                  </p>
+                  <p>
+                    2020 D&D Project.<br />
+                    198 West 21th Street, Suite 721 New York NY 10016
+                    <br />+ (82) 1234 5678 <br />contract@gmail.com
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <!-- END fh5co-page -->
+    </div>
+    <!-- END fh5co-wrapper -->
+
+    <%- include ("./script.ejs") %>
   </body>
 </html>

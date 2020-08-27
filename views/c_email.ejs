@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <title>D&D Project Log in</title>
+    <%- include ("./head.ejs") %>
+  </head>
+  <body>
+    <div id="fh5co-wrapper">
+            <div class="fh5co-section">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-6 fh5co-news">
+              <div class="limiter">
+                <div
+                  class="container-login100" >
+                  <span class="login_font">D&D PROJECT</span>
+                  <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+                  <form class="login100-form validate-form" method="POST" action="">
+                        <div class="wrap-input100 validate-input m-b-23" data-validate="E-mail is reauired">
+                        <span class="label-input100">E-mail</span>
+                        <table style="width:100%;">
+                            <tr>
+                                <td style="width:80%;">
+                                  <input
+                                  class="input100"
+                                  type="text"
+                                  name="w_email"
+                                  placeholder="Type your E-mail"
+                                />
+                                </td>
+                                <td style="width:20%;">
+                                  <button id="email_ath_btn">Send code</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <span class="focus-input100" data-symbol="&#xf206;"></span>
+                        </div>
+
+                                     <div class="wrap-input100 validate-input" data-validate="Code is required">
+                                        <span class="label-input100">Authentication code</span>
+                                        <input class="input100" type="password" name="pass" placeholder="Type your code"/>
+                                        <span class="focus-input100" data-symbol="&#xf190;"></span>
+                                      </div>
+                                        <br>
+                                     <div class="container-login100-form-btn">
+                                        <div class="wrap-login100-form-btn">
+                                         <div class="login100-form-bgbtn"></div>
+                                          <button class="login100-form-btn">
+                                           <a href="c_sign_up"> confirm</a>
+                                         </button>
+                                       </div>
+                                     </div>
+                                  </div>
+                              </form>
+                            </div>
+                         </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        <footer>
+              <div id="footer">
+                  <div class="container">
+                      <div class="row">
+                         <div class="col-md-6 col-md-offset-3 text-center">
+                                <p class="fh5co-social-icons">
+                                    <i class="icon-twitter2"></i>
+                                    <i class="icon-facebook2"></i>
+                                    <i class="icon-instagram"></i>
+                                    <i class="icon-dribbble2"></i>
+                                    <i class="icon-youtube"></i>
+                                  </p>
+                                  <p>
+                                    2020 D&D Project.<br />
+                                    198 West 21th Street, Suite 721 New York NY 10016
+                                    <br />+ (82) 1234 5678 <br />contract@gmail.com
+                                </p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </footer>
+        </div>
+      <!-- END fh5co-page -->
+    </div>
+    <!-- END fh5co-wrapper -->
+
+    <%- include ("./script.ejs") %>
+  </body>
+</html>

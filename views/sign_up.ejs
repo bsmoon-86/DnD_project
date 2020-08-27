@@ -1,133 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>bootstrap template</title>
-
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- font awesome -->
-    <link rel="stylesheet" href="css/font-awesome.min.css" media="screen" title="no title" charset="utf-8">
-    <!-- Custom style -->
-    <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <title>D&D Project Log in</title>
+    <%- include ("./head.ejs") %>
   </head>
   <body>
+    <div id="fh5co-wrapper">
+        <div class="fh5co-section">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 fh5co-news">
+				<div class="limiter">
+					<div
+            class="container-login100">
+            <table>
+              <tr>
+                <td><span class="login_font">SIGN UP</span></td>
+              </tr>
+              <tr>
+                <td id="sign_title">for workers</td>
+              </tr>
+            </table>
+					  <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+						<form class="login100-form validate-form" method="POST" action="">
+              <div
+							class="wrap-input100 validate-input m-b-23"
+							data-validate="Username is reauired">
+							<span class="label-input100">ID</span>
+							<input
+							  class="input100"
+							  type="text"
+							  name="id"
+							  placeholder="Type your ID"
+							/>
+							<span class="focus-input100" data-symbol="&#xf206;"></span>
+						  </div>
+              <div
+							class="wrap-input100 validate-input m-b-23"
+							data-validate="Password is reauired">
+							<span class="label-input100">Password</span>
+							<input
+							  class="input100"
+							  type="text"
+							  name="pass"
+							  placeholder="Type your password"
+							/>
+              <span class="focus-input100" data-symbol="&#xf206;"></span>
+              </div>
+              <div
+							class="wrap-input100 validate-input m-b-23"
+							data-validate="Password is reauired">
+							<span class="label-input100">Confirm password</span>
+							<input
+							  class="input100"
+							  type="text"
+							  name="pass"
+							  placeholder="Confirm your password"
+							/>
+              <span class="focus-input100" data-symbol="&#xf206;"></span>
+              </div>
+              <div
+							class="wrap-input100 validate-input m-b-23"
+							data-validate="name is reauired">
+							<span class="label-input100">Your full name</span>
+							<input
+							  class="input100"
+							  type="text"
+							  name="w_name"
+							  placeholder="Type your full name"
+							/>
+							<span class="focus-input100" data-symbol="&#xf206;"></span>
+              </div>
+              <div
+							class="wrap-input100 validate-input m-b-23"
+							data-validate="Username is reauired">
+							<span class="label-input100">Birth</span>
+							<input
+							  class="input100"
+							  type="text"
+							  name="w_birth"
+							  placeholder="Type your birth (yy/mm/dd)"
+							/>
+							<span class="focus-input100" data-symbol="&#xf206;"></span>
+              </div>
+              <div
+							class="wrap-input100 validate-input m-b-23"
+							data-validate="Username is reauired">
+							<span class="label-input100">Zip code</span>
+							<input
+							  class="input100"
+							  type="text"
+							  name="w_addr"
+							  placeholder="Type your zip code"
+							/>
+							<span class="focus-input100" data-symbol="&#xf206;"></span>
+						  </div>
+              <div  id="checkbox">
+                <input type="checkbox"> <span id="checkbox_span">check if you agree <a href=""><u>this.</u></a></span></input>
+              </div>
+						  <div id="sign_up" class="container-login100-form-btn">
+							<div class="wrap-login100-form-btn">
+							  <div class="login100-form-bgbtn"></div>
+							  <button class="login100-form-btn">SIGN UP</button>
+							</div>
+						   </div>
+						  </div>
+						</form>
+					  </div>
+					</div>
+				  </div>
 
-
-        <div class="col-md-12">
-        <div class="page-header">
-    	    <h1>sign <small>sign up</small></h1>
-        </div>
-        <form class="form-horizontal" method="post" action="/action1" >
-        <div class="form-group">
-          <label class="col-sm-3 control-label" for="inputEmail">Email</label>
-        <div class="col-sm-6">
-          <input class="form-control" id="inputEmail" name="id" type="email" placeholder="Email">
-        </div>
-        </div>
-        <div class="form-group">
-          <label class="col-sm-3 control-label" for="inputPassword">Password</label>
-        <div class="col-sm-6">
-          <input class="form-control" id="inputPassword" name="pass" type="password" placeholder="Password">
-        <p class="help-block">number, 8 or more characters including special characters</p>
-        </div>
-        </div>
-          <div class="form-group">
-              <label class="col-sm-3 control-label" for="inputPasswordCheck">Confirm Password</label>
-             <div class="col-sm-6">
-              <input class="form-control" id="inputPasswordCheck" name="c_pass" type="password" placeholder="Confirm Password">
-                <p class="help-block">Please check your password once more</p>
-             </div>
-          </div>
-
-        <div class="form-group">
-            <label class="col-sm-3 control-label" for="inputName">Name</label>
-          <div class="col-sm-6">
-            <input class="form-control" id="inputName" name="name" type="text" placeholder="name">
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-sm-3 control-label" for="inputName">Date of birth</label>
-        <div class="col-sm-6">
-          <input class="form-control" id="inputName" name="birth" type="text" placeholder="Date of birth">
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="col-sm-3 control-label" for="inputName">Address</label>
-      <div class="col-sm-6">
-        <input class="form-control" id="inputName" name="addr" type="text" placeholder="Address">
-      </div>
-    </div>
-    <div class="form-group" id="divAccountNumber">
-      <label class="col-sm-3 control-label" for="inputNumber">Phone number</label>
-      <div class="col-sm-6">
-        <input
-          type="tel"
-          class="form-control onlyNumber"
-          id="AccountNumber"
-          name="phone"
-          data-rule-required="true"
-          placeholder="Phone number"
-          maxlength="11"
-        />
-      </div>
-            <div class="col-sm-6" data-toggle="buttons">
-              <label class="btn btn-warning active">
-                <input id="agree" type="checkbox" autocomplete="off" chacked>
-                  <span class="fa fa-check"></span>
-              </label>
-              <a href="#">Terms of Use</a> agree
+              </div>
             </div>
           </div>
-        <div class="form-group">
-          <div class="col-sm-12 text-center">
-            <button type="submit" class="btn btn-primary" name = "signup">sign up</button>
-            <button class="btn btn-danger" name = "cancel">Cancel sign up</button>
-          </div>
         </div>
-          <hr>
-        </form>
-        </div>
-      </article>
+		<footer>
+			<div id="footer">
+			  <div class="container">
+				<div class="row">
+				  <div class="col-md-6 col-md-offset-3 text-center">
+					<p class="fh5co-social-icons">
+					  <i class="icon-twitter2"></i>
+					  <i class="icon-facebook2"></i>
+					  <i class="icon-instagram"></i>
+					  <i class="icon-dribbble2"></i>
+					  <i class="icon-youtube"></i>
+					</p>
+					<p>
+					  2020 D&D Project.<br />
+					  198 West 21th Street, Suite 721 New York NY 10016
+					  <br />+ (82) 1234 5678 <br />contract@gmail.com
+					</p>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </footer>
+      </div>
+      <!-- END fh5co-page -->
+    </div>
+    <!-- END fh5co-wrapper -->
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-
-
-    <script>
-      $("button[name=signup]").click(function(){
-        $.post("/action1", {
-          id: $("input[name=id]").val(),
-          pass: $("input[name=pass]").val(),
-          w_name : $("input[name=w_name]").val(),
-          w_birth: $("input[name=w_birth]").val(),
-          w_addr: $("input[name=w_addr]").val(),
-          w_phone: $("input[name=w_phone]").val()
-
-        })
-      })
-    </script>
-
+    <%- include ("./script.ejs") %>
   </body>
 </html>
-
-<div>
-  <p class="text-center">
-    <small><strong>D&D</strong></small><br>
-    <small>CEO : 문병선 ㆍ address :  서울시 마포구 공덕동 ㆍ Company Registration Number : 123-12-12345 ㆍ company number : 02-123-1234</small><br>
-  </p>
-</div>
-<!--// 푸터 들어가는 부분 -->
-</div>
