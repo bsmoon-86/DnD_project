@@ -183,7 +183,7 @@ function createCode(objArr, iLength) {
         console.log('Email sent: ' + info.response);
       }
     });
-  
+    res.redirect("/c_email")
 
 })
 
