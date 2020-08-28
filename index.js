@@ -24,6 +24,9 @@ app.use(express.static(path.join(__dirname, "public")));
 var indexRouter = require("./routes/index");
 var signinRouter = require("./routes/signin");
 var companyRouter = require("./routes/company");
+var nodemailer = require('nodemailer');
+var smtpTransport = require('nodemailer-smtp-transport');
+
 app.use("/", indexRouter);
 
 app.use("/signin", signinRouter);
@@ -142,6 +145,47 @@ app.post("/action2", function (req, res, next) {
   //   }
   // });
 });
+app.post("/c_email", function(req, res, next){
+  const email = req.body.w_email;
+  console.log(email);
+  var arr = "0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,;".split(",");
+var randomPw = createCode(arr, 10);
+console.log(randomPw)
+
+function createCode(objArr, iLength) {
+  var arr = objArr;
+  var randomStr = "";
+  for (var j=0; j<iLength; j++) {
+  randomStr += arr[Math.floor(Math.random()*arr.length)];
+  }
+  return randomStr
+  }
+
+    var transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: 'keafz0829@gmail.com',
+        pass: 'c4iuser1!'
+      }
+    });
+    
+    var mailOptions = {
+      from: 'keafz0829@gmail.com',
+      to: email,
+      subject: 'DND에서 새로운 인증코드를 보내드립니다.',
+      text: 'DND에서 새로운 인증코드를 보내드립니다\n' + randomPw + '\n안녕히계세요'
+    };
+    
+    transporter.sendMail(mailOptions, function(error, info){
+      if (error) {
+        console.log(error);
+      } else {
+        console.log('Email sent: ' + info.response);
+      }
+    });
+  
+
+})
 
 server.listen(port, function () {
   console.log("웹 서버 시작", port);
