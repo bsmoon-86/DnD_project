@@ -28,7 +28,7 @@ app.use("/", indexRouter);
 
 app.use("/signin", signinRouter);
 
-app.use("/company", companyRouter);
+app.use("/", companyRouter);
 
 app.post("/action1", function (req, res, next) {
   const id = req.body.id;
